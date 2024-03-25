@@ -13,7 +13,6 @@
     @endif
     <form method="post" action="{{ route('product.update', $product) }}">
         @csrf
-        @method('PUT')
         <div>
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" value="{{ $product->name }}" required>

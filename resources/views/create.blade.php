@@ -7,14 +7,23 @@
 
 <h2>Cadastrar produto</h2>
 
-<form method="get" action="{{ route('create') }}" class="container"  enctype="multipart/form-data">
+<form method="post" action="catalogo" class="container"  enctype="multipart/form-data">
+@csrf
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        </div> <br>
+        <div>
+            <label for="brand">Marca:</label>
+            <input type="text" id="brand" name="brand" required>
+        </div>
+        <div> <br>
+            <label for="model">Modelo:</label>
+            <input type="text" id="model" name="model" required>
+        </div> <br>
+        <button type="submit">Cadastrar</button>
 
-    @csrf
-    <label for="nome">Nome:</label><br> <input type="text" id="nome" name="nome"><br><br>
-    <label for="marca">Marca:</label><br> <input type="text" id="marca" name="marca"><br><br>
-    <label for="modelo">Modelo:</label><br> <input type="text" id="modelo" name="modelo"><br><br>
-    <button type="submit">Cadastrar</button>
-
+    </form>
 </form>
 
 </body>
