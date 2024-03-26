@@ -35,3 +35,5 @@ Route::get('/catalog/{id}/edit', [CatalogController::class, 'edit'])->name('edit
 Route::put('/catalog/{id}', [CatalogController::class, 'update']);
 Route::delete('/catalog/{id}', [CatalogController::class, 'destroy']);
 
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
