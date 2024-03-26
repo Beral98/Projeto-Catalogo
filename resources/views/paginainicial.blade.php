@@ -21,7 +21,7 @@
                 <p>{{ $error }}</p>
             @endforeach
          @endif
-            <form method="post" action="{{route('catalogo')}}" class="container">
+            <form method="get" action="{{route('index')}}" class="container">
                 @csrf
             <div class="card">
                 <h1>Login</h1>

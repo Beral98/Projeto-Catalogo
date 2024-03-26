@@ -9,24 +9,21 @@ class AuthController extends Controller
 {
     public function login(request $request)
     {
-        $credential = $request->validate(['email' => 'required|email', 'password' => 'required|min:8']);
+        $credential = $request->only('email', 'password');
 
         if(Auth::attempt($credential)){
             $request->session()->regenerate();
-            return redirect()->intended('/catalogo');
+            return redirect()->intended('index');
         }
 
         return back()->withErrors([
-            'auth_error' => 'Email ou senha incorretos!!'])->onlyInput('email');
+            'auth_error' => 'Email ou senha incorretos!!']);
     }
 
 
 
     public function logout(Request $request)
 
-
-
-    
     {
         Auth::logout();
         $request->session()->invalidate();

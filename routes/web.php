@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WebController;
 use App\Http\Controllers\AuthController;
-use Monolog\Processor\WebProcessor;
-use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CatalogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,14 +28,10 @@ Route::get('/userlogin', function () {
 });
 
 
-
-Route::post('/catalogo', [WebController::class, 'catalogo'])->name('catalogo');
-
-Route::get('/create', [WebController::class, 'create'])->name('create');
-
-Route::get('/produto/{id}/delete', [WebController::class, 'destroy'])->name('product.delete');
-
-Route::get("/produto/{id}/edit",[WebController::class,"edit"])->name("product.edit");
-
-Route::put("/produto/{id}",[WebController::class,"update"])->name("product.update");
+Route::get('/catalog', [CatalogController::class, 'index'])->name('index');
+Route::get('/catalog/create', [CatalogController::class, 'create'])->name('create');
+Route::post('/catalog', [CatalogController::class, 'store']);
+Route::get('/catalog/{id}/edit', [CatalogController::class, 'edit'])->name('edit');
+Route::put('/catalog/{id}', [CatalogController::class, 'update']);
+Route::delete('/catalog/{id}', [CatalogController::class, 'destroy']);
 

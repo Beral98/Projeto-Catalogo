@@ -34,6 +34,20 @@ header {
   padding: 10px;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* largura opcional para o card */
+    margin: 0 auto; /* centralizar o card na página */
+}
+.button-container {
+    width: 100%; /* ocupar toda a largura do card */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* espaço acima do botão */
+}
+
 nav {
   width: 100%;
   height: 125px;

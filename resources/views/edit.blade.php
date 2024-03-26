@@ -7,18 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Adicionar Produto</h1>
+    <h1>Editar Produto</h1>
 
-<form action="{{ url('/catalog') }}" method="post">
+<form action="{{ url('/catalog/'.$item->id) }}" method="post">
     @csrf
+    @method('put')
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome">
+    <input type="text" name="nome" id="nome" value="{{ $item->nome }}">
 
     <label for="marca">Marca:</label>
-    <input type="text" name="marca" id="marca">
+    <input type="text" name="marca" id="marca" value="{{ $item->marca }}">
 
     <label for="modelo">Modelo:</label>
-    <input type="text" name="modelo" id="modelo">
+    <input type="text" name="modelo" id="modelo" value="{{ $item->modelo }}">
 
     <button type="submit">Salvar</button>
 </form>
