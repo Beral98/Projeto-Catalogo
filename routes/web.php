@@ -16,7 +16,7 @@ use App\Http\Controllers\CatalogController;
 */
 
 Route::get('/', [AuthController::class, 'showlogin'])->name('showlogin');
-Route::get('/login', [AuthController::class, 'showlogin'])->name('showlogin');
+Route::post('/login', [AuthController::class, 'showlogin'])->name('showlogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/adminlogin', function () {
